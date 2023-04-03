@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400;1,800&display=swap");
+:root {
+  --Purple: hsl(259, 100%, 65%);
+  --Light-red: hsl(0, 100%, 67%);
+
+  /* ### Neutral */
+
+  --White: hsl(0, 0%, 100%);
+  --Off-white: hsl(0, 0%, 94%);
+  --Light-grey: hsl(0, 0%, 86%);
+  --Smokey-grey: hsl(0, 1%, 44%);
+  --Off-black: hsl(0, 0%, 8%);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.main {
+  font-family: "Overpass", sans-serif;
+  background-color: var(--Off-white);
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  background-color: var(--White);
+  width: 45rem;
+  padding: 3.2rem;
+  border-radius: 20px 20px 140px 20px;
+}
+
+.input-container {
+  display: flex;
+  gap: 20px;
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.input-container > .col > label {
+  color: var(--Smokey-grey);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  line-height: 2.5;
+  font-weight: 700;
+}
+.col {
+  display: flex;
+  flex-direction: column;
+}
+.input-container > .col > input[type="number"] {
+  font-size: 32px;
+  padding: 15px;
+  width: 9rem;
+  border-radius: 5px;
+  border: 1.2px solid var(--Smokey-grey);
+  font-weight: 800;
+}
+.input-container > .col > input[type="number"]:focus {
+  border: 2px solid var(--Purple);
+  outline: none;
+}
+
+input::placeholder {
+  color: var(--Smokey-grey);
+}
+.mid {
+  display: flex;
+  align-items: center;
+}
+.mid > hr {
+  width: 80%;
+  border: 1px solid var(--Light-grey);
+}
+.arrow-icon {
+  background-color: var(--Purple);
+  border: none;
+  border-radius: 999px;
+  padding: 20px;
+  cursor: pointer;
+}
+.arrow-btn {
+  border: none;
+  background: none;
+}
+.result-container {
+  padding: 0 2rem;
+}
+.result-container > h1 {
+  font-size: 5rem;
+  font-weight: 800;
+  line-height: 1;
+}
+.result-container > h1 > span {
+  color: var(--Purple);
+  letter-spacing: 10px;
+}
