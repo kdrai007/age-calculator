@@ -90,47 +90,48 @@ window.onload = function () {
   // });
   //After refectoring the code
   btn.addEventListener("click", formatDate);
-  function validate() {
-    let dayFlag = false;
-    let monthFlag = false;
-    let yearFlag = false;
-    if (!day.value || parseInt(day.value) > 31) {
-      dayLabel.classList.add("label-error");
-      dayWarning.classList.remove("hide");
-      day.classList.add("input-error");
-      dayFlag = false;
-    } else {
-      dayLabel.classList.remove("label-error");
-      dayWarning.classList.add("hide");
-      day.classList.remove("input-error");
-      dayFlag = true;
-    }
-    if (!month.value || parseInt(month.value) > 12) {
-      monthLabel.classList.add("label-error");
-      monthWarning.classList.remove("hide");
-      month.classList.add("input-error");
-      monthFlag = false;
-    } else {
-      monthLabel.classList.remove("label-error");
-      monthWarning.classList.add("hide");
-      month.classList.remove("input-error");
-      monthFlag = true;
-    }
-    if (!year.value || parseInt(year.value) > currentYear) {
-      yearLabel.classList.add("label-error");
-      yearWarning.classList.remove("hide");
-      year.classList.add("input-error");
-      yearFlag = false;
-    } else {
-      yearLabel.classList.remove("label-error");
-      yearWarning.classList.add("hide");
-      year.classList.remove("input-error");
-      yearFlag = true;
-    }
-    if (dayFlag && monthFlag && yearFlag) return true;
-    return false;
-  }
 
+  function validate() {
+    const validateInput = (
+      inputValue,
+      maxValue,
+      label,
+      warning,
+      inputField
+    ) => {
+      let inputFlag = false;
+      if (!inputValue || parseInt(inputValue) > maxValue) {
+        label.classList.add("label-error");
+        warning.classList.remove("hide");
+        inputField.classList.add("input-error");
+        inputFlag = false;
+      } else {
+        label.classList.remove("label-error");
+        warning.classList.add("hide");
+        inputField.classList.remove("input-error");
+        inputFlag = true;
+      }
+      return inputFlag;
+    };
+
+    const dayFlag = validateInput(day.value, 31, dayLabel, dayWarning, day);
+    const monthFlag = validateInput(
+      month.value,
+      12,
+      monthLabel,
+      monthWarning,
+      month
+    );
+    const yearFlag = validateInput(
+      year.value,
+      currentYear,
+      yearLabel,
+      yearWarning,
+      year
+    );
+
+    return dayFlag && monthFlag && yearFlag;
+  }
   function formatDate() {
     if (validate()) {
       var getDay, getMonth, getYear;
