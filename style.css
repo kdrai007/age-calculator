@@ -72,12 +72,30 @@ input[type="number"] {
 input::placeholder {
   color: var(--Smokey-grey);
 }
+.label-error {
+  color: var(--Light-red) !important;
+}
+.input-error[type="number"] {
+  border: 1.2px solid var(--Light-red) !important;
+}
+.input-error[type="number"]:focus {
+  border: 2px solid var(--Light-red) !important;
+  outline: none !important;
+}
+.warning {
+  margin-top: 10px;
+  color: var(--Light-red);
+  font-size: 14px;
+}
+.hide {
+  display: none !important;
+}
 .mid {
   display: flex;
   align-items: center;
 }
 .mid > hr {
-  width: 80%;
+  width: 90%;
   border: 1px solid var(--Light-grey);
 }
 .arrow-icon {

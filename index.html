@@ -20,16 +20,19 @@
     <div class="container">
       <div class="input-container">
         <div class="col">
-          <label for="day">day</label>
-          <input type="number" name="day" id="day" placeholder="DD" minlength="2" maxlength="2" required>
+          <label for="day" class="day-label">day</label>
+          <input type="number" name="day" class="day" placeholder="DD" minlength="2" maxlength="2" required>
+          <p class="day-error warning hide">Must be valid day</p>
         </div>
         <div class="col">
-          <label for="month">month</label>
-          <input type="number" name="month" id="month" placeholder="MM" minlength="2" maxlength="2" required>
+          <label for="month" class="month-label">month</label>
+          <input type="number" name="month" class="month" placeholder="MM" minlength="2" maxlength="2" required>
+          <p class="month-error warning hide">Must be valid month</p>
         </div>
         <div class="col">
-          <label for="year">year</label>
-          <input type="number" name="year" id="year" placeholder="YYYY" minlength="4" maxlength="4" required>
+          <label for="year" class="year-label">year</label>
+          <input type="number" name="year" class="year" placeholder="YYYY" minlength="4" maxlength="4" required>
+          <p class="year-error warning hide">Must be in the past</p>
         </div>
       </div>
       <div class="mid">
@@ -41,7 +44,7 @@
       <div class="result-container">
         <h1><span id="year-res">--</span>years </h1>
         <h1><span id="month-res">--</span>months </h1>
-        <h1><span id="days-res">--</span>days </h1>
+        <h1><span id="day-res">--</span>days </h1>
       </div>
     </div>
   </main>
