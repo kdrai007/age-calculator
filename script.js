@@ -150,6 +150,9 @@ window.onload = function () {
       resultDay.innerText = getDay.toString();
       resultMonth.innerText = getMonth.toString();
       resultYear.innerText = getYear.toString();
+      resultDay.style.letterSpacing = "0";
+      resultMonth.style.letterSpacing = "0";
+      resultYear.style.letterSpacing = "0";
     }
   }
 };

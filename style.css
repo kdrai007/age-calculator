@@ -99,15 +99,21 @@ input::placeholder {
   border: 1px solid var(--Light-grey);
 }
 .arrow-icon {
+  width: 50px;
+}
+
+.arrow-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: var(--Purple);
   border: none;
   border-radius: 999px;
   padding: 20px;
   cursor: pointer;
 }
-.arrow-btn {
-  border: none;
-  background: none;
+.arrow-btn:hover {
+  background-color: hsl(260, 75%, 69%);
 }
 .result-container {
   padding: 0 2rem;
@@ -120,4 +126,58 @@ input::placeholder {
 .result-container > h1 > span {
   color: var(--Purple);
   letter-spacing: 10px;
+}
+@media screen and (max-width: 1023px) {
+  .container {
+    width: 40rem;
+  }
+  .input-container > .col > input[type="number"] {
+    font-size: 25px;
+    padding: 15px;
+    width: 7rem;
+  }
+  .result-container > h1 {
+    font-size: 4.5rem;
+    font-weight: 800;
+    line-height: 1;
+  }
+}
+@media screen and (max-width: 500px) {
+  .container {
+    width: 360px;
+    padding: 1rem;
+  }
+  .input-container > .col > input[type="number"] {
+    font-size: 15px;
+    padding: 12px;
+    width: 5rem;
+  }
+  .arrow-icon {
+    border: none;
+    border-radius: 999px;
+    width: 70px;
+    padding: 10px;
+    cursor: pointer;
+  }
+  .mid {
+    width: 360px;
+    margin: 2rem 0;
+  }
+  .mid > hr {
+    width: 100%;
+  }
+  .arrow-icon {
+    width: 50px;
+  }
+  .arrow-btn {
+    position: relative;
+    right: 10rem;
+    padding: 10px;
+  }
+  .result-container {
+    padding: 0;
+  }
+  .result-container > h1 {
+    font-size: 3.5rem;
+  }
 }
